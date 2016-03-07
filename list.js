@@ -42,14 +42,23 @@ class List {
   removeHead (node) {
     this.head = this.head.next;
   }
+
+  get (index) {
+    let current = this.head;
+    for ( ; index > 0 ; index--) {
+      current = current.next;
+    }
+    return current;
+  }
 }
 
 
 const list = new List;
-list.add(new Node('A'));
-list.add(new Node('B'));
-list.add(new Node('C'));
-list.add(new Node('D'));
-list.add(new Node('E'));
-list.add(new Node('F'));
+list.addTail(new Node('A'));
+list.addTail(new Node('B'));
+list.addTail(new Node('C'));
+list.addTail(new Node('D'));
+list.addTail(new Node('E'));
+list.addTail(new Node('F'));
 console.log(list);
+console.log(list.get(8));
