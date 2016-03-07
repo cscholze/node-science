@@ -1,0 +1,29 @@
+{
+  "name": "node-science",
+  "version": "1.0.0",
+  "description": "",
+  "main": "list.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cscholze/node-science.git"
+  },
+  "author": "Caleb Scholze <jcsdevel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cscholze/node-science/issues"
+  },
+  "homepage": "https://github.com/cscholze/node-science#readme",
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    }
+  },
+  "devDependencies": {
+    "eslint": "^2.3.0"
+  }
+}

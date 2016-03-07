@@ -13,16 +13,37 @@ class List {
     this.tail = null;
   }
 
-  add (node) {
+  addTail (node) {
     if (this.head) {
       this.tail.next = node;
-      this.tail = node;
     } else {
       this.head = node;
-      this.tail = node;
     }
+    this.tail = node;
+  }
+
+  addHead(node) {
+    this.tail = this.tail || node;
+    node.next = this.head;
+    this.head = node;
+  }
+
+  removeTail (node) {
+    let current = this.head;
+
+    while (current.next !== this.tail) {
+      current = current.next;
+    }
+
+    current.next = null;
+    this.tail = current;
+  }
+
+  removeHead (node) {
+    this.head = this.head.next;
   }
 }
+
 
 const list = new List;
 list.add(new Node('A'));
