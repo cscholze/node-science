@@ -1,64 +1,71 @@
-'use strict';
+'use strict'
 
 class Node {
   constructor (data) {
-    this.payload = data;
-    this.next = null;
+    this.payload = data
+    this.next = null
   }
 }
 
 class List {
   constructor () {
-    this.head = null;
-    this.tail = null;
+    this.head = null
+    this.tail = null
+  }
+
+  addHead (node) {
+    this.tail = this.tail || node
+    node.next = this.head
+    this.head = node
   }
 
   addTail (node) {
     if (this.head) {
-      this.tail.next = node;
+      this.tail.next = node
     } else {
-      this.head = node;
+      this.head = node
     }
-    this.tail = node;
+
+    this.tail = node
   }
 
-  addHead(node) {
-    this.tail = this.tail || node;
-    node.next = this.head;
-    this.head = node;
-  }
-
-  removeTail (node) {
-    let current = this.head;
+  removeTail () {
+    let current = this.head
 
     while (current.next !== this.tail) {
-      current = current.next;
+      current = current.next
     }
 
-    current.next = null;
-    this.tail = current;
+    current.next = null
+    this.tail = current
   }
 
-  removeHead (node) {
-    this.head = this.head.next;
+  removeHead () {
+    this.head = this.head.next
+
+    if (!this.head) {
+      this.tail = null
+    }
   }
 
   get (index) {
-    let current = this.head;
-    for ( ; index > 0 ; index--) {
-      current = current.next;
+    let current = this.head
+
+    while (index > 0) {
+      current = current.next
+      index--
     }
-    return current;
+
+    return current
   }
 }
 
+const list = new List
+list.addTail(new Node('A'))
+list.addTail(new Node('B'))
+list.addTail(new Node('C'))
+list.addTail(new Node('D'))
+list.addTail(new Node('E'))
+list.addTail(new Node('F'))
+console.log(list)
 
-const list = new List;
-list.addTail(new Node('A'));
-list.addTail(new Node('B'));
-list.addTail(new Node('C'));
-list.addTail(new Node('D'));
-list.addTail(new Node('E'));
-list.addTail(new Node('F'));
-console.log(list);
-console.log(list.get(8));
