@@ -1,6 +1,13 @@
 # node-science
-Creating basic data structures in javascript including...
-- list
-- queue
-- stack
-- Dictionary
+Learning some computer science topics in javascript.
+
+## Creating basic data structures including...
+- list (list.js)
+- queue (queue.js)
+- stack (stack.js)
+- Dictionary (dictionary.js)
+ 
+## Sorting algorithms for arrays (sort.js)
+ - bubbleSort
+ - insertionSort
+ - selectionSort
